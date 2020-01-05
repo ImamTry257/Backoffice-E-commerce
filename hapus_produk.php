@@ -1,7 +1,5 @@
 <?php 
-
 $id = $_GET["id"];
-
 $hapusData = $koneksi->query("DELETE FROM produk WHERE id_produk = '$id' ");
 
 if($hapusData == TRUE){
@@ -12,6 +10,4 @@ if($hapusData == TRUE){
 		</script>
 	";
 }
-
-
 ?>

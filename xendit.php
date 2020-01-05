@@ -1,8 +1,5 @@
 <?php 
-
 $success=false;
-
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $file = 'text.txt';
@@ -10,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = file_get_contents("php://input");
 
     // $current2 = file_get_contents($file);
-    
     $current2 = $data;
     if(file_put_contents($file,$current2)){
         $success = true;
@@ -30,6 +26,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 // $current .= "John Smith\n";
 // // Write the contents back to the file
 // file_put_contents($file, $current);
-
 
 ?>

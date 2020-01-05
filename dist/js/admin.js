@@ -15,8 +15,6 @@ menuContent.addEventListener('click',function(e){
 })
 
 var jam = document.querySelector('.tanggal_pukul');
-// console.log(jam);
-
 var date = new Date().getDate();
 var day = new Date().getDay();
 var bulan = new Date().getMonth()+1;
@@ -63,7 +61,6 @@ if(bulan == 1){
 }else if(bulan == 12){
 	bulan = 'Desember';
 }
-
 
 setInterval(function(){
 	var tanggal = day + ', ' + date + ' ' + bulan + ' ' + tahun;

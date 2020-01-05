@@ -1,9 +1,7 @@
 <?php
-
+$koneksi = koneksi();
 ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
-
 session_start();
-
 require 'koneksi.php';
 
 if(!isset($_SESSION["admin"])){
@@ -22,13 +20,7 @@ if(!isset($_GET["halaman"])){
 		</script>
 	";
 }
-
-// $koneksi = new mysqli("localhost","root","","trainittoko");
-
-$koneksi = koneksi();
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -60,15 +52,15 @@ $koneksi = koneksi();
 	<meta name="msapplication-square310x310logo" content="DY/mstile-310x310.png" />
 
     <?php if($_GET["halaman"] == 'produk'){ ?>
-    <title>Data Produk</title>
+    	<title>Data Produk</title>
     <?php }elseif($_GET["halaman"] == 'pembelian'){ ?>
-    <title>Data Pembelian</title>
+    	<title>Data Pembelian</title>
     <?php }elseif($_GET["halaman"] == 'tambah_produk'){ ?>
-    <title>Tambah Data Produk</title>
+    	<title>Tambah Data Produk</title>
     <?php }elseif($_GET["halaman"] == 'ubah_produk'){ ?>
-    <title>Ubah Data Produk</title>
+    	<title>Ubah Data Produk</title>
     <?php }elseif($_GET["halaman"] == 'detail_pembelian'){ ?>
-    <title>Detail Pembelian</title>
+    	<title>Detail Pembelian</title>
     <?php } ?>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
@@ -83,8 +75,6 @@ $koneksi = koneksi();
 <body>
 
 <div class="body">
-
-<!-- <div class="wrapper"> -->
 	<nav class="row header-admin">
 		<div class="container">
 			<div class="">
@@ -106,39 +96,37 @@ $koneksi = koneksi();
 		</div>
 	</nav>
 
-
 	<aside class="row sidebar">
-				<ul class="menu-content col-md-2" id="home">
-					<li>
-						<a href="index.php?halaman=home"> <i class="fa fa-home"></i> <span>Home</span></a>
-					</li>
-					<li>
-						<a href="data.php?halaman=produk" class="dataMaster"> <i class="fa fa-cube"></i>  Produk </a>
-					</li>
-					<li>
-						<a href="data.php?halaman=pembelian"><i class="fa fa-shopping-basket"></i> <span>Pembelian</span></a>
-					</li>
-					<li>
-						<a href="index.php?halaman=pelanggan"><i class="fa fa-user"></i> <span>Pelanggan</span></a>
-					</li>
-				</ul>
+		<ul class="menu-content col-md-2" id="home">
+			<li>
+				<a href="index.php?halaman=home"> <i class="fa fa-home"></i> <span>Home</span></a>
+			</li>
+			<li>
+				<a href="data.php?halaman=produk" class="dataMaster"> <i class="fa fa-cube"></i>  Produk </a>
+			</li>
+			<li>
+				<a href="data.php?halaman=pembelian"><i class="fa fa-shopping-basket"></i> <span>Pembelian</span></a>
+			</li>
+			<li>
+				<a href="index.php?halaman=pelanggan"><i class="fa fa-user"></i> <span>Pelanggan</span></a>
+			</li>
+		</ul>
 
-			<div class="inner col-md-10" style=" padding: 30px 50px 50px 30px;">
-				<?php if($_GET["halaman"] == 'produk'){
-					include 'produk.php';
-				}elseif($_GET["halaman"] == 'pembelian'){
-					include 'pembelian.php';
-				}elseif($_GET["halaman"] == 'ubah_produk'){
-					include 'ubah_produk.php';
-				}elseif($_GET["halaman"] == 'hapus_produk'){
-					include 'hapus_produk.php';
-				}elseif($_GET["halaman"] == 'tambah_produk'){
-					include 'tambah_produk.php';
-				}elseif($_GET["halaman"] == 'detail_pembelian'){
-				include 'detail_pembelian.php';
-				} ?>
-			</div>
-		<!-- </div> -->
+		<div class="inner col-md-10" style=" padding: 30px 50px 50px 30px;">
+			<?php if($_GET["halaman"] == 'produk'){
+				include 'produk.php';
+			}elseif($_GET["halaman"] == 'pembelian'){
+				include 'pembelian.php';
+			}elseif($_GET["halaman"] == 'ubah_produk'){
+				include 'ubah_produk.php';
+			}elseif($_GET["halaman"] == 'hapus_produk'){
+				include 'hapus_produk.php';
+			}elseif($_GET["halaman"] == 'tambah_produk'){
+				include 'tambah_produk.php';
+			}elseif($_GET["halaman"] == 'detail_pembelian'){
+			include 'detail_pembelian.php';
+			} ?>
+		</div>
 	</aside>
 </div>
 
@@ -147,7 +135,7 @@ $koneksi = koneksi();
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 tulisan">
-					<p class="text-center"><i class="far fa-copyright"></i> Copyright 2018 | Imam Try Wibowo. All Right Reserved</p>
+					<p class="text-center"><i class="far fa-copyright"></i> Copyright <?= date('Y'); ?> | Imam Try Wibowo. All Right Reserved</p>
 				</div>	
 			</div>
 		</div>
