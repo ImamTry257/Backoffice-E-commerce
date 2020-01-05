@@ -1,0 +1,7 @@
+John Smith
+{"id":"5d07113dc9162d42e615eceb","external_id":"ecc_tester_20190617060350","user_id":"5ce5063b678a0841507cabfd","is_high":false,"payment_method":"POOL","status":"PAID","merchant_name":"ECC","amount":250000,"paid_amount":250000,"bank_code":"PERMATA","payer_email":"expayment@mailinator.com","description":"Trip ke Bali 0350","adjusted_received_amount":250000,"fees_paid_amount":0,"created":"2019-06-17T04:04:13.453Z","updated":"2019-06-17T04:04:27.345Z"}John Smith
+
+{"id":"5d071365c9162d42e615ed10","external_id":"ecc_tester_20190617061302","user_id":"5ce5063b678a0841507cabfd","is_high":false,"payment_method":"CREDIT_CARD","status":"PAID","merchant_name":"ECC","amount":400000,"paid_amount":400000,"payer_email":"expayment@mailinator.com","description":"Trip ke Bali 1302","adjusted_received_amount":400000,"created":"2019-06-17T04:13:25.194Z","updated":"2019-06-17T04:14:05.727Z"}
+John Smith
+
+{"id":"5d0713dcc9162d42e615ed12","external_id":"ecc_tester_20190617061501","user_id":"5ce5063b678a0841507cabfd","is_high":false,"payment_method":"RETAIL_OUTLET","status":"PAID","merchant_name":"ECC","amount":500000,"paid_amount":500000,"payer_email":"expayment@mailinator.com","description":"Trip ke Bali 1501","adjusted_received_amount":500000,"fees_paid_amount":0,"created":"2019-06-17T04:15:24.936Z","updated":"2019-06-17T04:15:49.727Z"}
