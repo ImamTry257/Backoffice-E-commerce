@@ -1,14 +1,7 @@
 <?php
-
-// $koneksi = new mysqli("localhost","root","","trainittoko");
 require 'koneksi.php';
-
 $koneksi = koneksi();
-
-// var_dump($_SESSION["admin"]);
-
 ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
-
 session_start();
 
 if(!isset($_GET["halaman"]) || $_GET["halaman"] == NULL){
@@ -37,7 +30,6 @@ if(!isset($_GET["halaman"]) || $_GET["halaman"] == NULL){
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   
   	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="DY/apple-touch-icon-57x57.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="DY/apple-touch-icon-114x114.png" />
@@ -76,49 +68,45 @@ if(!isset($_GET["halaman"]) || $_GET["halaman"] == NULL){
 	
 </head>
 <body class="body">
-
-
-<div class="container login">	
-	<div class="row">
-		<div class="container">
-		<?php if($_GET["halaman"] == 'signUp'){ ?>
-			<div class="content_signUp col-md-6 col-md-push-3">
-		<?php }elseif($_GET["halaman"] == 'login'){ ?>
-			<div class="content_login col-md-6 col-md-push-3">
-		<?php }elseif($_GET["halaman"] == 'reset_pass'){ ?>
-			<div class="content_reset_pass col-md-6 col-md-push-3">
-		<?php } ?>
-				<?php if($_GET["halaman"] == 'signUp'){
-					include 'signUp.php';
-				}elseif($_GET["halaman"] == 'login'){
-					include 'login.php';
-				}elseif($_GET["halaman"] == 'reset_pass'){
-					include 'reset_pass.php';
-				}else{
-					echo "
-						<script>
-							location='intro.php?halaman=signUp';
-						</script>
-					";
-				} ?>
-			</div>			
-		</div>
-	</div>
-</div>
-
-<footer>
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<p class="text-center"><i class="far fa-copyright"></i> Copyright 2018 | Imam Try Wibowo. All Right Reserved</p>
-				</div>	
+	<div class="container login">	
+		<div class="row">
+			<div class="container">
+			<?php if($_GET["halaman"] == 'signUp'){ ?>
+				<div class="content_signUp col-md-6 col-md-push-3">
+			<?php }elseif($_GET["halaman"] == 'login'){ ?>
+				<div class="content_login col-md-6 col-md-push-3">
+			<?php }elseif($_GET["halaman"] == 'reset_pass'){ ?>
+				<div class="content_reset_pass col-md-6 col-md-push-3">
+			<?php } ?>
+					<?php if($_GET["halaman"] == 'signUp'){
+						include 'signUp.php';
+					}elseif($_GET["halaman"] == 'login'){
+						include 'login.php';
+					}elseif($_GET["halaman"] == 'reset_pass'){
+						include 'reset_pass.php';
+					}else{
+						echo "
+							<script>
+								location='intro.php?halaman=signUp';
+							</script>
+						";
+					} ?>
+				</div>			
 			</div>
 		</div>
 	</div>
-</footer>
 
-
+	<footer>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text-center"><i class="far fa-copyright"></i> Copyright <?= date('Y'); ?> | Imam Try Wibowo. All Right Reserved</p>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</footer>
 
 <!-- jquery.min.js wajib agar bootstrap.min.js dapat bekerja -->
 <script src="dist/js/jquery.min.js"></script>

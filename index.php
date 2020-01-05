@@ -1,15 +1,11 @@
 <?php
-// $koneksi = new mysqli("localhost","root","","trainittoko");
 require 'koneksi.php';
-
 $koneksi = koneksi();
 
 ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
-
 session_start();
 
 if(!isset($_SESSION["admin"])){
-	// var_dump($_SESSION["admin"]);
 	echo "
 		<script>
 			alert('Silahkan Login!');
@@ -18,22 +14,14 @@ if(!isset($_SESSION["admin"])){
 		";
 }else{
 	if(!isset($_GET["halaman"])){
-	// var_dump($_SESSION["admin"]);
 	echo "
-			<script>
-				location='index.php?halaman=home';
-			</script>
+		<script>
+			location='index.php?halaman=home';
+		</script>
 		";
 	}
-
-	
 }
-
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -41,8 +29,7 @@ if(!isset($_SESSION["admin"])){
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  
+
   	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="DY/apple-touch-icon-57x57.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="DY/apple-touch-icon-114x114.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="DY/apple-touch-icon-72x72.png" />
@@ -65,11 +52,11 @@ if(!isset($_SESSION["admin"])){
 	<meta name="msapplication-square310x310logo" content="DY/mstile-310x310.png" />
 
 	<?php if($_GET["halaman"] == 'home'){ ?>
-    <title>Home</title>
+    	<title>Home</title>
     <?php }elseif($_GET["halaman"] == 'pelanggan'){ ?>
-    <title>Data Pelanggan</title>
+    	<title>Data Pelanggan</title>
     <?php }elseif($_GET["halaman"] == 'detail_pembelian'){ ?>
-    <title>Detail Pembelian</title>
+    	<title>Detail Pembelian</title>
     <?php }?>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
@@ -83,15 +70,12 @@ if(!isset($_SESSION["admin"])){
 </head>
 <body>
 <div class="body">
-
-<!-- <div class="wrapper"> -->
 	<nav class="row header-admin">
 		<div class="container">
 			<div class="">
 				<div class="col-md-12">
 					<ul class="navbar-nav ul">
 						<li class="col-md-2 dodolanyuk"><a href="#" class="judul"><h2>Admin-DodolanYuk</h2></a></li>		
-						<!-- <li class="col-md-4 col-md-push-6 tanggal tanggal_pukul"></li> -->
 						<li class="dropdown li col-md-2 col-md-push-9">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								<img src="dist/foto_produk/<?php echo $_SESSION["admin"]["foto_admin"]; ?>" width="50" class="img-circle"><?php echo $_SESSION["admin"]["nama_lengkap"]; ?> <span class="caret"></span>
@@ -106,7 +90,6 @@ if(!isset($_SESSION["admin"])){
 			</div>
 		</div>
 	</nav>
-
 
 	<aside class="row">
 		<div class="sidebar col-sm-2">
@@ -144,7 +127,7 @@ if(!isset($_SESSION["admin"])){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 tulisan">
-					<p class="text-center"><i class="far fa-copyright"></i> Copyright 2018 | Imam Try Wibowo. All Right Reserved</p>
+					<p class="text-center"><i class="far fa-copyright"></i> Copyright <?= date('Y'); ?> | Imam Try Wibowo. All Right Reserved</p>
 				</div>	
 			</div>
 		</div>
